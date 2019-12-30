@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+     android:background="@drawable/background"
+    android:layout_height="match_parent"
+    tools:context=".MainScreen">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@color/colorPrimary"
+         android:id="@+id/user_name"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/lay1"
+        android:layout_below="@+id/user_name"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:id="@+id/notSavedTitle"
+
+            android:text="@string/point_Notsave"
+            android:background="@color/colorPrimary"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:id="@+id/savedTitle"
+            android:text="@string/point_save"
+            android:background="@color/colorPrimary"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@+id/lay1"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/points"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/points_save"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="end"
+        android:layoutDirection="ltr"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center"
+             android:textColor="@color/white"
+            android:layout_height="wrap_content"
+             android:text="@string/add_point"/>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/addPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            app:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/white_plus"
+            app:elevation="10dp" />
+    </LinearLayout>
+
+</RelativeLayout>

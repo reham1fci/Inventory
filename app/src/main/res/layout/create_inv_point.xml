@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+     android:padding="10dp"
+
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:gravity="center"
+         android:textColor="@color/white"
+         android:padding="8dp"
+         android:textStyle="bold"
+         android:background="@color/colorPrimary"
+        android:text="@string/create_inv_point"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Stores"/>
+    <Spinner
+        android:layout_width="match_parent"
+         android:id="@+id/storesSp"
+        android:layout_height="wrap_content">
+    </Spinner>
+    <View
+        android:layout_width="match_parent"
+         android:background="@color/colorPrimary"
+        android:layout_height="1dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ref_no"/>
+
+    <EditText
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bordersolid"
+        android:hint="000"
+         android:id="@+id/ref_no"
+        android:padding="8dp" />
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="1dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:id="@+id/desc"
+         android:padding="8dp"
+        android:layout_marginBottom="10dp"
+         android:background="@drawable/bordersolid"
+        android:hint="@string/description"/>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="1dp"/>
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/save_data"
+        android:elevation="50dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/button_primary"
+        />
+</LinearLayout>

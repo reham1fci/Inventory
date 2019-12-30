@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:title="@string/show_more"
+     app:showAsAction="always"
+    android:icon="@drawable/load_more80"
+    android:iconTint="@color/white"
+    android:tooltipText="@string/show_more"
+     android:id="@+id/show_more"
+    >
+
+</item>
+</menu>

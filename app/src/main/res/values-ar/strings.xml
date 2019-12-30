@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">الجرد</string>
+    <string name="user_name">كود المستخدم</string>
+    <string name="password">كلمة المرور</string>
+    <string name="org_code">&#160;الشركة</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="forget_pass">نسيت كلمة المرور</string>
+    <string name="create_acc"> ليس لدى حساب</string>
+    <string name="no_internet">لايوجد اتصال بالانترنت </string>
+    <string name="enter"> ادخل  </string>
+    <string name="add_point"> اضافة نقطة جرد </string>
+    <string name="setting"> الاعدادات </string>
+    <string name="cost_price"> سعر التكلفة  </string>
+    <string name="selling_price">سعر البيع</string>
+    <string name="description"> الموصفات </string>
+    <string name="brand_name"> أسم الصنف  </string>
+    <string name="count"> الكمية </string>
+    <string name="brand_num"> رقم الصنف</string>
+    <string name="save"> ترحيل الجرد </string>
+    <string name="logout"> تسجيل الخروج </string>
+    <string name="welcome"> مرحبا </string>
+    <string name="desc"> الوصف </string>
+    <string name="expire"> تاريخ الانتهاء </string>
+    <string name="batch"> رقم  الدفعة </string>
+    <string name="Stores"> المخازن </string>
+    <string name="Search"> البحث  </string>
+    <string name="item_name">الاسم  </string>
+    <string name="item_unit"> الوحدة </string>
+    <string name="item_id"> رقم الصنف </string>
+    <string name="choose_item">اختر الصنف</string>
+    <string name="store_num"> رقم المخزن </string>
+    <string name="add"> اضافة  </string>
+    <string name="ref_no">رقم المرجع  </string>
+    <string name="create_inv_point">نقطة جرد جديدة  </string>
+    <string name="expire_date">تاريخ الانتهاء</string>
+    <string name="Done">تم</string>
+    <string name="delete">حذف </string>
+    <string name="confirm_delete">"سوف يتم حذف العنصر نهائيا.احذف؟"</string>
+    <string name="save_data">حفظ</string>
+    <string name="not_found">لا توجد نتيجة للبحث </string>
+    <string name="point_save">نقاط الجرد تم ترحلها </string>
+    <string name="point_Notsave">نقاط الجرد غير مرحلة </string>
+    <string name="done_saved">تم ترحيل النقاط بنجاح </string>
+    <string name="finish_inventory"> هل تريد ترحيل الجرد الى السيرفر الان؟ </string>
+    <string name="not_found_inv"> لا يوجداصناف فى نقطةالجردلترحيلها  </string>
+    <string name="inv_before"> انت قمت بجرد هذا الصنف من قبل هل تريد  التعديل ؟</string>
+    <string name="edit"> تعديل </string>
+    <string name="cancel"> لا </string>
+    <string name="error_try_again"> حدث خطا حاول مرة اخرى </string>
+    <string name="avl_q">الكمية المتوفرة بالمخزن </string>
+
+    <string name="notFoundInStore"> هذا الصنف غير موجود بهذا المخزن ويوجد فى هذه المخازن   </string>
+
+    <string name="ok"> نعم </string>
+    <string name="show_more"> عرض التفاصيل  </string>
+    <string name="get_items"> سحب الاصناف  </string>
+
+</resources>

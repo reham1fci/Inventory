@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Inventory</string>
+    <string name="user_name"> User ID</string>
+    <string name="password"> Password </string>
+    <string name="org_code">&#160;Organisation Code   </string>
+    <string name="login">Login</string>
+    <string name="forget_pass">forget password</string>
+    <string name="create_acc"> Do not have an account</string>
+    <string name="no_internet"> no internet Connection </string>
+    <string name="enter"> Enter </string>
+    <string name="add_point"> Add Inventory Point </string>
+    <string name="setting"> Setting </string>
+    <string name="cost_price"> Cost Price </string>
+    <string name="selling_price"> Selling Price </string>
+    <string name="description"> Description </string>
+    <string name="brand_name"> Brand Name </string>
+    <string name="count"> Count </string>
+    <string name="brand_num"> Brand Num</string>
+    <string name="save"> Save </string>
+    <string name="logout"> Logout </string>
+    <string name="welcome"> Welcome </string>
+    <string name="desc"> Description </string>
+    <string name="expire"> Expire Date </string>
+    <string name="batch"> Batch Number </string>
+    <string name="Stores"> The Stores </string>
+    <string name="Search"> Searching  </string>
+    <string name="item_name">  Name </string>
+    <string name="item_unit"> Unit </string>
+    <string name="item_id"> ID </string>
+    <string name="choose_item"> Choose Item </string>
+    <string name="store_num"> Store number </string>
+    <string name="add"> Add </string>
+    <string name="ref_no"> Reference num </string>
+    <string name="create_inv_point">New Inventory Point </string>
+    <string name="expire_date">Expire Date</string>
+    <string name="Done">Done</string>
+    <string name="delete">Delete</string>
+    <string name="save_data">Save</string>
+    <string name="confirm_delete">"Item will be permanently deleted..Delete?" </string>
+    <string name="not_found">No Result Found </string>
+    <string name="point_save">Inventory Point Saved </string>
+    <string name="point_Notsave">Inventory Point Not Saved</string>
+    <string name="done_saved">Inventory Point Saved Successfully</string>
+    <string name="finish_inventory">are you finish the inventory  point and want to save it to server ?</string>
+    <string name="not_found_inv"> not found items in Inventory point to save  </string>
+    <string name="inv_before"> you hve been counted this item you want to edit ? </string>
+    <string name="edit"> Edit </string>
+    <string name="cancel"> Cancel </string>
+    <string name="avl_q"> Store available quantity </string>
+    <string name="error_try_again"> Error Try Again </string>
+    <string name="notFoundInStore"> Not fount item in this store  , but found in this stores </string>
+ <string name="ok"> OK </string>
+    <string name="show_more"> Show More </string>
+    <string name="get_items"> get items offline </string>
+
+</resources>

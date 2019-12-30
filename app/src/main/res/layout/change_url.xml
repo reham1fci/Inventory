@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+   android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="@string/password"
+         android:id="@+id/password"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="url"
+        android:id="@+id/url"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:text="change"
+        android:id="@+id/change"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/buttonshape"
+        android:layout_height="wrap_content" />
+</LinearLayout>
