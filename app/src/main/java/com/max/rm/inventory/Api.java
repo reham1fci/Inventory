@@ -23,6 +23,7 @@ import com.google.android.gms.ads.internal.gmsg.HttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -318,8 +319,17 @@ public class Api {
      }
     static class downloadItems extends AsyncTask<String , Integer , String>{
         requestDownload onResponse ;
+        long startTime, endTime; //declare this globally
+
         public downloadItems(requestDownload onResponse ) {
             this.onResponse=onResponse ;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            startTime = System.currentTimeMillis();
+
         }
 
         @Override
@@ -328,26 +338,40 @@ public class Api {
             Log.d("progress"  , String.valueOf(values[0])) ;
              onResponse.onProgress(values);
         }
+
         int status = 0;
+         boolean f  = true  ;
 
         @Override
         protected String doInBackground(String... strings) {
             // HttpURLConnection urlConn;
-            for (int i = 0; i < Integer.parseInt(strings[1]); i++){
+          /*  while (f){
                 status++;
                 try {
                     publishProgress(status);
                     Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }}
-                    URL mUrl = null;
+                }
+            }*/
+          URL mUrl = null;
             String output ="" ;
             String line ;
             String body = strings[0] ;
           //  Log.d("body" , body);
+
             try {
+
                 mUrl = new URL(BASE_URL+"Inventory" );
+               /* int count = mUrl.length;
+                long totalSize = 0;
+                for (int i = 0; i < count; i++) {
+                    totalSize += Downloader.downloadFile(urls[i]);
+                    publishProgress((int) ((i / (float) count) * 100));
+                    // Escape early if cancel() is called
+                    if (isCancelled()) break;
+                }
+                return totalSize;*/
 
                    /*  urlConn = (HttpURLConnection) mUrl.openConnection();
                      urlConn.setRequestMethod("POST");
@@ -361,19 +385,37 @@ public class Api {
                 conn.setDoOutput(true);
                 OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
 
+                int lenghtOfFile = conn.getContentLength();
+               /*  Log.d("file length  , " , String.valueOf(lenghtOfFile)) ;*/
                 wr.write(body);
                 wr.flush();
-                InputStream input= conn.getInputStream() ;
-                byte data[] = new byte[1024];
-                long total = 0;
-                int count;
+             InputStream input= conn.getInputStream() ;
+           ///InputStream input2 = new BufferedInputStream(conn.getInputStream());
+
+               // byte data[] = new byte[1024];
+         // int count;
                 BufferedReader reader = new BufferedReader(new InputStreamReader(input)) ;
                 while ((line=reader.readLine())!=null){
 
                     output=output+line ;
                 //    publishProgress((int) (output.length() * 100 / 5000));
+                  status++ ;
+                   publishProgress(status);
+                   // Log.d(" sttt" , String.valueOf(status)) ;
 
                 }
+
+             //long total = 0;
+
+            /*    while ((count = input2.read(data)) != -1) {
+                    total += count;
+                    // publishing the progress....
+                    // After this onProgressUpdate will be called
+                    publishProgress((int)((total*100)/lenghtOfFile));
+
+                    // writing data to file
+                  //  output.write(data, 0, count);
+                }*/
 
 
 
@@ -392,10 +434,16 @@ public class Api {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            keys.log("ttt" ,s);
+            long time  =  endTime- startTime  ;
+
+            keys.log("time" , String.valueOf(((time/1000)/60)));
+
+         //   f= false ;
             String result = jsonFormat(s);
             onResponse.onResponse(result);
-            keys.log("output" ,result);
+            endTime = System.currentTimeMillis();
+            keys.log("ttt" ,result);
+
         }
     }
       public void testVolley(String body){

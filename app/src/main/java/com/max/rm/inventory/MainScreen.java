@@ -1,5 +1,6 @@
 package com.max.rm.inventory;
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -8,6 +9,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -543,17 +546,30 @@ public class MainScreen extends AppCompatActivity {
         remindItems = numOfItems - (numOfLoop * NUM);
         Log.d("numOfloops", String.valueOf(numOfLoop));
         Log.d("remind", String.valueOf(remindItems));
-        int skip = 0;
-        int take = NUM;
+        //int skip = 0;
+        //int take = NUM;
         progressDialog.setTitle("download all items ");
         progressDialog.setMessage("Downloading in Progress...");
         progressDialog.setIndeterminate(false);
-        progressDialog.setMax(100);
+       // progressDialog.setMax(100);
         progressDialog.setProgressStyle(progressDialog.STYLE_HORIZONTAL);
         progressDialog.setCancelable(false);
 
         progressDialog.show();
-        getAllItems(org_id, String.valueOf(skip), String.valueOf(take));
+         for( int i  =  0  ;   i  <  numOfLoop  ;  i++) {
+              int skip  =  i * NUM  ;
+              int take  =   NUM ;
+             getAllItems(org_id, String.valueOf(skip), String.valueOf(take));
+
+         } if (remindItems>0) {
+            int skip = numOfLoop * NUM;
+            int take = remindItems;
+            getAllItems(org_id, String.valueOf(skip), String.valueOf(take));
+
+        }
+
+
+
 
     }
     int i = 1;
@@ -579,7 +595,7 @@ public class MainScreen extends AppCompatActivity {
                 }
 
               //  keys.longInfo(response);
-                 int c  = Integer.parseInt(skip)+Integer.parseInt(take) ;
+               /*  int c  = Integer.parseInt(skip)+Integer.parseInt(take) ;
 
                 progressDialog.setMessage("downloaded " + c);
                 if (i > numOfLoop) {
@@ -603,7 +619,7 @@ public class MainScreen extends AppCompatActivity {
                     int take = remindItems;
                     getAllItems(org_id, String.valueOf(skip), String.valueOf(take));
                      i= i+1 ;
-                }
+                }*/
 
 
             }
@@ -627,8 +643,19 @@ public class MainScreen extends AppCompatActivity {
                 +
                 "}";
          Log.d("body" , body) ;
-        send.execute(body , String.valueOf(100));
-    }
+      //send.execute(body , String.valueOf(100));
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
+            send.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, body , String.valueOf(100));
+        else
+            send.execute(body , String.valueOf(100));
+           }
+    /*@TargetApi(Build.VERSION_CODES.HONEYCOMB) // API 11
+    void startMyTask(AsyncTask asyncTask) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
+            asyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, params);
+        else
+            asyncTask.execute(params);
+    }*/
     public long addItem(itemObject item) {
 
         ContentValues value = new ContentValues();
